@@ -6,6 +6,7 @@ import com.bookmarking.bet.dto.Outcome;
 import com.bookmarking.bet.dto.ResultDto;
 import com.bookmarking.bet.exception.EventEndedException;
 import com.bookmarking.bet.service.ProfitService;
+import com.google.common.annotations.VisibleForTesting;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -55,7 +56,8 @@ public class ProfitServiceImpl implements ProfitService {
                 .findAny();
     }
 
-    private BigDecimal getOverallBalance() {
+    @VisibleForTesting
+    protected BigDecimal getOverallBalance() {
         return resultDtoList.stream()
                 .map(ResultDto::getProfit)
                 .reduce(BigDecimal.ZERO, BigDecimal::add);
@@ -108,12 +110,12 @@ public class ProfitServiceImpl implements ProfitService {
     }
 
     private BigDecimal getBetProfitOnCustomerWin(final BetInternalDto actualBet, final Outcome outcome) {
-        final BigDecimal prize = (actualBet.getStake().multiply(actualBet.getOdds())).setScale(2, RoundingMode.CEILING);
+        final BigDecimal prize = (actualBet.getStake().multiply(actualBet.getOdds()));
         final BigDecimal betProfit = actualBet.getStake().subtract(prize);
         if (CollectionUtils.isEmpty(betDtoList)) {
-            return betProfit;
+            return betProfit.setScale(2, RoundingMode.HALF_UP);
         } else {
-            return getSummaryBetProfit(outcome, betProfit);
+            return getSummaryBetProfit(outcome, betProfit).setScale(2, RoundingMode.HALF_UP);
         }
     }
 
@@ -122,13 +124,13 @@ public class ProfitServiceImpl implements ProfitService {
         BigDecimal finalProfit;
         switch (outcome) {
             case FIRST:
-                finalProfit = lastBetDto.getFirstProfit().add(betProfit);
+                finalProfit = lastBetDto.getFirstProfit().add(betProfit.setScale(2, RoundingMode.HALF_UP));
                 break;
             case DRAW:
-                finalProfit = lastBetDto.getDrawProfit().add(betProfit);
+                finalProfit = lastBetDto.getDrawProfit().add(betProfit.setScale(2, RoundingMode.HALF_UP));
                 break;
             case SECOND:
-                finalProfit = lastBetDto.getSecondProfit().add(betProfit);
+                finalProfit = lastBetDto.getSecondProfit().add(betProfit.setScale(2, RoundingMode.HALF_UP));
                 break;
             default:
                 logger.error("Unexpected value: " + outcome);

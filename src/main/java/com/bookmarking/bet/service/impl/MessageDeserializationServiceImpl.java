@@ -1,6 +1,7 @@
 package com.bookmarking.bet.service.impl;
 
 import com.bookmarking.bet.dto.BetDto;
+import com.bookmarking.bet.dto.MessageType;
 import com.bookmarking.bet.dto.ResultDto;
 import com.bookmarking.bet.service.MessageDeserializationService;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -37,11 +38,12 @@ public class MessageDeserializationServiceImpl implements MessageDeserialization
     }
 
     private boolean checkResultMandatoryFieldsAvailability(ResultDto resultDto) {
-        return resultDto.getType() != null && resultDto.getResult() != null && resultDto.getResult().getFixture() != null && resultDto.getResult().getResult() != null;
+        return resultDto.getType() != null && MessageType.RESULT.equals(resultDto.getType()) && resultDto.getResult() != null
+                && resultDto.getResult().getFixture() != null && resultDto.getResult().getResult() != null;
     }
 
     private boolean checkBetMandatoryFieldsAvailability(BetDto betDto) {
-        return betDto.getType() != null && betDto.getBet() != null && betDto.getBet().getFixture() != null
+        return betDto.getType() != null && MessageType.BET.equals(betDto.getType()) && betDto.getBet() != null && betDto.getBet().getFixture() != null
                 && betDto.getBet().getOdds() != null && betDto.getBet().getOutcome() != null && betDto.getBet().getStake() != null;
     }
 }

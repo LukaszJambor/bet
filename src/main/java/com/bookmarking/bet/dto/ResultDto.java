@@ -1,12 +1,11 @@
 package com.bookmarking.bet.dto;
 
-import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 @Setter
-@Getter
 public class ResultDto {
 
     private MessageType type;
@@ -19,5 +18,17 @@ public class ResultDto {
                 result.getFixture() +
                 " profit: " +
                 profit;
+    }
+
+    public BigDecimal getProfit() {
+        return profit.setScale(2, RoundingMode.HALF_UP);
+    }
+
+    public MessageType getType() {
+        return type;
+    }
+
+    public ResultInternalDto getResult() {
+        return result;
     }
 }

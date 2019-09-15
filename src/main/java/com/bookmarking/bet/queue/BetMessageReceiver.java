@@ -35,8 +35,10 @@ public class BetMessageReceiver {
         try {
             final BetDto betDto = messageDeserializationService.deserializeBet(message);
             profitService.evaluateBetProfit(betDto);
-        } catch (IOException | EventEndedException e) {
+        } catch (IOException e) {
             logger.error(e.getMessage(), e);
+        } catch (EventEndedException e) {
+            logger.warn(e.getMessage(), e);
         }
     }
 
