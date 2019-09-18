@@ -70,36 +70,36 @@ public class ProfitServiceImplTest {
         assertThat(bet1.getFirstProfit()).isEqualTo(BigDecimal.valueOf(-7.00).setScale(2));
         assertThat(bet1.getDrawProfit()).isEqualTo(BigDecimal.valueOf(20.00).setScale(2));
         assertThat(bet1.getSecondProfit()).isEqualTo(BigDecimal.valueOf(20.00).setScale(2));
-        assertThat(bet2.getFirstProfit()).isEqualTo(BigDecimal.valueOf(3.50).setScale(2));
-        assertThat(bet2.getDrawProfit()).isEqualTo(BigDecimal.valueOf(-17.28).setScale(2));
-        assertThat(bet2.getSecondProfit()).isEqualTo(BigDecimal.valueOf(30.50).setScale(2));
-        assertThat(bet3.getFirstProfit()).isEqualTo(BigDecimal.valueOf(9.00).setScale(2));
-        assertThat(bet3.getDrawProfit()).isEqualTo(BigDecimal.valueOf(-32.41).setScale(2));
-        assertThat(bet3.getSecondProfit()).isEqualTo(BigDecimal.valueOf(36.00).setScale(2));
-        assertThat(bet4.getFirstProfit()).isEqualTo(BigDecimal.valueOf(12.20).setScale(2));
-        assertThat(bet4.getDrawProfit()).isEqualTo(BigDecimal.valueOf(-29.21).setScale(2));
-        assertThat(bet4.getSecondProfit()).isEqualTo(BigDecimal.valueOf(15.42).setScale(2));
-        assertThat(bet5.getFirstProfit()).isEqualTo(BigDecimal.valueOf(36.20).setScale(2));
-        assertThat(bet5.getDrawProfit()).isEqualTo(BigDecimal.valueOf(-96.17).setScale(2));
-        assertThat(bet5.getSecondProfit()).isEqualTo(BigDecimal.valueOf(39.42).setScale(2));
-        assertThat(bet6.getFirstProfit()).isEqualTo(BigDecimal.valueOf(67.60).setScale(2));
-        assertThat(bet6.getDrawProfit()).isEqualTo(BigDecimal.valueOf(-207.01).setScale(2));
-        assertThat(bet6.getSecondProfit()).isEqualTo(BigDecimal.valueOf(70.82).setScale(2));
-        assertThat(bet7.getFirstProfit()).isEqualTo(BigDecimal.valueOf(34.68).setScale(2));
-        assertThat(bet7.getDrawProfit()).isEqualTo(BigDecimal.valueOf(-164.26).setScale(2));
-        assertThat(bet7.getSecondProfit()).isEqualTo(BigDecimal.valueOf(113.57).setScale(2));
-        assertThat(bet8.getFirstProfit()).isEqualTo(BigDecimal.valueOf(49.78).setScale(2));
-        assertThat(bet8.getDrawProfit()).isEqualTo(BigDecimal.valueOf(-192.20).setScale(2));
-        assertThat(bet8.getSecondProfit()).isEqualTo(BigDecimal.valueOf(128.67).setScale(2));
-        assertThat(bet10.getFirstProfit()).isEqualTo(BigDecimal.valueOf(36.63).setScale(2));
-        assertThat(bet10.getDrawProfit()).isEqualTo(BigDecimal.valueOf(-174.90).setScale(2));
-        assertThat(bet10.getSecondProfit()).isEqualTo(BigDecimal.valueOf(145.97).setScale(2));
-        assertThat(bet11.getFirstProfit()).isEqualTo(BigDecimal.valueOf(35).setScale(2));
-        assertThat(bet11.getDrawProfit()).isEqualTo(BigDecimal.valueOf(-172.40).setScale(2));
-        assertThat(bet11.getSecondProfit()).isEqualTo(BigDecimal.valueOf(148.47).setScale(2));
-        assertThat(result1.getProfit()).isEqualTo(BigDecimal.valueOf(-233.50).setScale(2));
+        assertThat(bet2.getFirstProfit()).isEqualTo(BigDecimal.valueOf(10.50).setScale(2));
+        assertThat(bet2.getDrawProfit()).isEqualTo(BigDecimal.valueOf(-37.28).setScale(2));
+        assertThat(bet2.getSecondProfit()).isEqualTo(BigDecimal.valueOf(10.50).setScale(2));
+        assertThat(bet3.getFirstProfit()).isEqualTo(BigDecimal.valueOf(5.50).setScale(2));
+        assertThat(bet3.getDrawProfit()).isEqualTo(BigDecimal.valueOf(-15.13).setScale(2));
+        assertThat(bet3.getSecondProfit()).isEqualTo(BigDecimal.valueOf(5.50).setScale(2));
+        assertThat(bet4.getFirstProfit()).isEqualTo(BigDecimal.valueOf(3.20).setScale(2));
+        assertThat(bet4.getDrawProfit()).isEqualTo(BigDecimal.valueOf(3.20).setScale(2));
+        assertThat(bet4.getSecondProfit()).isEqualTo(BigDecimal.valueOf(-20.58).setScale(2));
+        assertThat(bet5.getFirstProfit()).isEqualTo(BigDecimal.valueOf(24.00).setScale(2));
+        assertThat(bet5.getDrawProfit()).isEqualTo(BigDecimal.valueOf(-66.96).setScale(2));
+        assertThat(bet5.getSecondProfit()).isEqualTo(BigDecimal.valueOf(24.00).setScale(2));
+        assertThat(bet6.getFirstProfit()).isEqualTo(BigDecimal.valueOf(31.40).setScale(2));
+        assertThat(bet6.getDrawProfit()).isEqualTo(BigDecimal.valueOf(-110.84).setScale(2));
+        assertThat(bet6.getSecondProfit()).isEqualTo(BigDecimal.valueOf(31.40).setScale(2));
+        assertThat(bet7.getFirstProfit()).isEqualTo(BigDecimal.valueOf(-32.92).setScale(2));
+        assertThat(bet7.getDrawProfit()).isEqualTo(BigDecimal.valueOf(42.75).setScale(2));
+        assertThat(bet7.getSecondProfit()).isEqualTo(BigDecimal.valueOf(42.75).setScale(2));
+        assertThat(bet8.getFirstProfit()).isEqualTo(BigDecimal.valueOf(15.10).setScale(2));
+        assertThat(bet8.getDrawProfit()).isEqualTo(BigDecimal.valueOf(-27.94).setScale(2));
+        assertThat(bet8.getSecondProfit()).isEqualTo(BigDecimal.valueOf(15.10).setScale(2));
+        assertThat(bet10.getFirstProfit()).isEqualTo(BigDecimal.valueOf(-13.15).setScale(2));
+        assertThat(bet10.getDrawProfit()).isEqualTo(BigDecimal.valueOf(17.30).setScale(2));
+        assertThat(bet10.getSecondProfit()).isEqualTo(BigDecimal.valueOf(17.30).setScale(2));
+        assertThat(bet11.getFirstProfit()).isEqualTo(BigDecimal.valueOf(-1.63).setScale(2));
+        assertThat(bet11.getDrawProfit()).isEqualTo(BigDecimal.valueOf(2.50).setScale(2));
+        assertThat(bet11.getSecondProfit()).isEqualTo(BigDecimal.valueOf(2.50).setScale(2));
+        assertThat(result1.getProfit()).isEqualTo(BigDecimal.valueOf(-124.92).setScale(2));
         assertThat(result2.getProfit()).isEqualTo(BigDecimal.valueOf(0).setScale(2));
-        assertThat(result3.getProfit()).isEqualTo(BigDecimal.valueOf(483.43).setScale(2));
+        assertThat(result3.getProfit()).isEqualTo(BigDecimal.valueOf(92.05).setScale(2));
     }
 
     @Test
@@ -128,7 +128,7 @@ public class ProfitServiceImplTest {
         BigDecimal overallBalance = profitService.getOverallBalance();
 
         //then
-        assertThat(overallBalance).isEqualTo(BigDecimal.valueOf(249.93).setScale(2));
+        assertThat(overallBalance).isEqualTo(BigDecimal.valueOf(-32.87).setScale(2));
     }
 
     private BetDto createBetDto(MessageType messageType, String fixture, Outcome outcome, BigDecimal stake, BigDecimal odds) {

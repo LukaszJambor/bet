@@ -14,13 +14,6 @@ public class BetDto {
     private BigDecimal drawProfit;
     private BigDecimal secondProfit;
 
-    @Override
-    public String toString() {
-        return "1: " + firstProfit +
-                " X: " + drawProfit +
-                " 2: " + secondProfit;
-    }
-
     public MessageType getType() {
         return type;
     }
